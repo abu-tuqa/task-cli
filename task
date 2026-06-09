@@ -1,0 +1,81 @@
+#!/usr/bin/env lua
+
+local cmd = arg[1]
+local file_path = os.getenv("HOME") .. "/.todo_list.txt"
+
+if cmd == "new" then
+	local task = arg[2]
+	if task and task ~= "" then
+		local file = io.open(file_path, "a")
+		if file then
+			file:write(task .. "\n")
+			file:close()
+			print("New task is being saved: " .. task)
+		end
+	else
+		print("Error: Task's name invalid.")
+	end
+		
+elseif cmd == "list" then
+	local file = io.open(file_path, "r")
+	if file then
+		local lines = {}
+		for line in file:lines() do
+			table.insert(lines, line)
+		end
+		file:close()
+
+		if #lines > 0 then
+			print("Current ToDo List:")
+			for index, line in ipairs(lines) do
+				print(index .. ". " .. line)
+			end
+		else
+			print("List's empty. Insert tasks to begin listing them.")
+		end
+	else
+		print("List's empty. Insert tasks to begin listing them.")
+	end
+elseif cmd == "finish" then
+	local index = tonumber(arg[2])
+	if not index then
+		print("Task not found. Give us a number that exists.")
+		return
+	end
+
+	local tasks = {}
+	local file = io.open(file_path, "r")
+	if file then
+		for line in file:lines() do
+			table.insert(tasks, line)
+		end
+		file:close()
+	end
+
+	if index > 0 and index <= #tasks then
+		local removed_task = table.remove(tasks, index)
+		
+		file = io.open(file_path, "w")
+		if file then
+			for _, task in ipairs(tasks) do
+				file:write(task .. "\n")
+			end
+			file:close()
+		end	
+		print("A task has been finished: " .. removed_task)
+	else
+		print("Error: Given task is out of range.")
+	end
+
+elseif cmd == "nuke" then
+	local file = io.open(file_path, "w")
+	if file then
+		file:close()
+		print("All tasks have been wiped out. New list, new life.")
+	else
+		print("Error: Could not access the file to wipe it.")
+	end
+
+else
+	print("Error: We could not recognize the given command. Please use either new, list, finish, or nuke.")
+end
