@@ -1,8 +1,7 @@
-# Ignore local test todo files
 *.txt
 .todo_list.txt
+.todo_done.txt
 
-# Ignore backup and swap files
 *.swp
 *~
 .DS_Store
