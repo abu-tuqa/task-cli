@@ -2,15 +2,19 @@
 
 local cmd = arg[1]
 local file_path = os.getenv("HOME") .. "/.todo_list.txt"
+local archive_path = os.getenv("HOME") .. "/.todo_done.txt"
 
 if cmd == "new" then
 	local task = arg[2]
 	if task and task ~= "" then
 		local file = io.open(file_path, "a")
 		if file then
-			file:write(task .. "\n")
+			local timestamp = os.date("[%Y-%m-%d] ")
+			file:write(timestamp .. task .. "\n")
 			file:close()
 			print("New task is being saved: " .. task)
+		else
+			print("Error: System couldn't reach to the file. Check its permissions.")
 		end
 	else
 		print("Error: Task's name invalid.")
@@ -35,7 +39,8 @@ elseif cmd == "list" then
 		end
 	else
 		print("List's empty. Insert tasks to begin listing them.")
-	end
+	end			
+
 elseif cmd == "finish" then
 	local index = tonumber(arg[2])
 	if not index then
@@ -50,6 +55,9 @@ elseif cmd == "finish" then
 			table.insert(tasks, line)
 		end
 		file:close()
+	else
+		print("Error: Task's file's unreadable.")
+		return
 	end
 
 	if index > 0 and index <= #tasks then
@@ -62,7 +70,14 @@ elseif cmd == "finish" then
 			end
 			file:close()
 		end	
-		print("A task has been finished: " .. removed_task)
+
+		local archive = io.open(archive_path, "a")
+		if archive then
+			archive:write(removed_task .. " [Completed]\n")
+			archive:close()
+		end
+
+		print("Task has been finished and archived: " .. removed_task)
 	else
 		print("Error: Given task is out of range.")
 	end
