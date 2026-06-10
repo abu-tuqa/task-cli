@@ -25,7 +25,7 @@ To remove all current tasks. Example:
 
 It overwrites the todo_list file with nothing.
 
-**WARNING**: Some might say 'Umm where's the confirmation pal 🤓'; the command's name is nuke, it's meant to be used when your list is getting too messy or uncontrollable.
+**WARNING**: Someone might say 'Umm where's the confirmation bro 🤓'; the command's name is nuke, it's meant to be used when your list is getting too messy or uncontrollable.
 # Installation
 Installing task-cli is quite simple. If you want to install it globally, run these commands in your terminal:
 ```bash
