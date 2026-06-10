@@ -1,5 +1,5 @@
 # task-cli
-task-cli is a simple tool used to have a lightweight TODO list. Hate electron? Got bored of BIG TECH companies having the 'best' TODO list apps? This is your tool. It runs at your terminal, uses simple commands (task new/finish/list) and runs on Lua.
+task-cli is a simple tool used to have a lightweight TODO list. Hate electron? Got bored of BIG TECH companies having the 'best' TODO list apps? Have ADHD? This is your tool. It runs at your terminal, uses simple commands (task new/finish/list) and runs on Lua.
 
 Available commands are:
 ### task new
