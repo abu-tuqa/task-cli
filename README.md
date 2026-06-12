@@ -31,7 +31,7 @@ Installing task-cli is quite simple. If you want to install it globally, run the
 ```bash
 curl -s https://raw.githubusercontent.com/abu-tuqa/task-cli/main/task -o task
 
-chmod +x task
+chmod +x task.lua
 
 sudo mv task /usr/local/bin/
 ```
