@@ -29,7 +29,7 @@ It overwrites the todo_list file with nothing.
 # Installation
 Installing task-cli is quite simple. If you want to install it globally, run these commands in your terminal:
 ```bash
-curl -s https://raw.githubusercontent.com/abu-tuqa/task-cli/main/task -o task
+curl -s https://raw.githubusercontent.com/abu-tuqa/task-cli/main/task.lua -o task
 
 chmod +x task.lua
 
