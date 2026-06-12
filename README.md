@@ -15,7 +15,7 @@ If you managed to make a typo or just want to repharse your task, you could!
 **Tip**: You could use your 'brain' to get the id (first task = id=1, second task...) or just use the list.
 
 ### task finish [id]
-Finishs a task and saves it for you (for backup/history or for monitoring progress).
+Finishes a task and saves it for you (for backup/history or for monitoring progress).
 
 ### task history
 To view previous tasks that you've finished.
