@@ -1,26 +1,24 @@
 # task-cli
 task-cli is a simple tool used to have a lightweight TODO list. Hate electron? Got bored of BIG TECH companies having the 'best' TODO list apps? Have ADHD? This is your tool. It runs at your terminal, uses simple commands (task new/finish/list) and runs on Lua.
 
-Available commands are:
-### task new
-To make a new task. Example: `task new "Drink water"`
-
-It adds your new task to the 'todo_list.txt' file.
+## Basic Commands
+### task new [string]
+To make new tasks; Spaces allowed, no quotes needed.
 ### task list
-To list current tasks. Example:
-Current ToDo List:
-1. [2026-06-10] Drink water
-2. [2026-06-10] Have a jug
-3. [2026-06-10] Sleep
 
-It basically shows the contents of your todo_list.txt file numbered.
-### task finish
-To finish a current task. Uses task's number so make sure you know it OR check task list. Example:
-task finish 3
+To list your current tasks and status your current progress, with a timestamp showing you when you've submitted the task.
+### task oops [id] [text]
+If you managed to make a typo or just want to repharse your task, you could!
 
-It moves your finished tasks to the "todo_done.txt" file, so you can back them up or check your progress whenever you would like to.
+**Tip**: You could use your 'brain' to get the id (first task = id=1, second task...) or just use the list.
+
+### task finish [id]
+Finishs a task and saves it for you (for backup/history or for monitoring progress).
+
+### task history
+To view previous tasks that you've finished.
 ### task nuke
-To remove all current tasks. Example:
+To remove all current tasks without backup. Example:
 `task nuke`
 
 It overwrites the todo_list file with nothing.
