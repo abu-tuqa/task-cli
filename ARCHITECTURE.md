@@ -1,5 +1,4 @@
-# task-cli's code process
-
+# [THIS WILL BE REWRITTEN SOON]
 System depends on two main sources for information: todo_list.txt; your local text file that we save tasks with, and task new [string]; our main way of getting new tasks being saved to your list file.
 
 
