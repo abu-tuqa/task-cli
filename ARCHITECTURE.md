@@ -4,7 +4,7 @@ System depends on two main sources for information: todo_list.txt; your local te
 
 
 
-task new basically adds a line with the current timestamp [of sending the task] via os.date, then write beside your task. Let's say you've inserted `task new "Get a girlfriend and fast", system will write on your list file `[YYYY-MM-DD] Get a girlfriend and fast`.
+task new basically adds a line with the current timestamp [of sending the task] via os.date, then write beside your task. Let's say you've inserted `task new "Get a girlfriend and fast"`, system will write on your list file[YYYY-MM-DD] Get a girlfriend and fast`.
 
 
 
